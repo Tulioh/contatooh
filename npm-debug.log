@@ -1,0 +1,34 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'uninstall',
+1 verbose cli   'grunt-contrib-copy',
+1 verbose cli   'grunt-contrib-clean' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 verbose node_modules/grunt-contrib-copy unbuild
+5 verbose node_modules/grunt-contrib-clean unbuild
+6 info preuninstall grunt-contrib-copy@0.7.0
+7 info uninstall grunt-contrib-copy@0.7.0
+8 info preuninstall grunt-contrib-clean@0.6.0
+9 verbose true,/home/tulio/Projetos/Node/contatooh/node_modules,/home/tulio/Projetos/Node/contatooh/node_modules unbuild grunt-contrib-copy@0.7.0
+10 info postuninstall grunt-contrib-copy@0.7.0
+11 info uninstall grunt-contrib-clean@0.6.0
+12 verbose true,/home/tulio/Projetos/Node/contatooh/node_modules,/home/tulio/Projetos/Node/contatooh/node_modules unbuild grunt-contrib-clean@0.6.0
+13 info postuninstall grunt-contrib-clean@0.6.0
+14 error Error: EACCES, unlink '/home/tulio/Projetos/Node/contatooh/node_modules/grunt-contrib-copy/node_modules/chalk/node_modules/.bin/has-ansi'
+14 error  { [Error: EACCES, unlink '/home/tulio/Projetos/Node/contatooh/node_modules/grunt-contrib-copy/node_modules/chalk/node_modules/.bin/has-ansi']
+14 error   errno: 3,
+14 error   code: 'EACCES',
+14 error   path: '/home/tulio/Projetos/Node/contatooh/node_modules/grunt-contrib-copy/node_modules/chalk/node_modules/.bin/has-ansi' }
+15 error Please try running this command again as root/Administrator.
+16 error System Linux 3.16.0-31-generic
+17 error command "/usr/local/bin/node" "/usr/local/bin/npm" "uninstall" "grunt-contrib-copy" "grunt-contrib-clean"
+18 error cwd /home/tulio/Projetos/Node/contatooh
+19 error node -v v0.10.36
+20 error npm -v 1.4.28
+21 error path /home/tulio/Projetos/Node/contatooh/node_modules/grunt-contrib-copy/node_modules/chalk/node_modules/.bin/has-ansi
+22 error code EACCES
+23 error errno 3
+24 error stack Error: EACCES, unlink '/home/tulio/Projetos/Node/contatooh/node_modules/grunt-contrib-copy/node_modules/chalk/node_modules/.bin/has-ansi'
+25 verbose exit [ 3, true ]

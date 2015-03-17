@@ -1,27 +1,41 @@
 language: node_js
 node_js:
- - 0.10
+- 0.1
 notifications:
- - tuliohdvp@gmail.com
+- tuliohdvp@gmail.com
 before_install:
- - npm install -g bower@1.3
- - npm install -g grunt-cli@0.1
- - npm install -g karma-cli@0.0
- - npm install -g protractor@1.5
- - webdriver-manager update
- - bower install
+- npm install -g bower@1.3
+- npm install -g grunt-cli@0.1
+- npm install -g karma-cli@0.0
+- npm install -g protractor@1.5
+- webdriver-manager update
+- bower install
 before_script:
- - node test/data.js
- - grunt
- - cd dist
+- node test/data.js
+- grunt minifica
+before_deploy:
+- git config --global user.email 'travis@travis-ci.com'
+- git config --global user.name 'Travis CI'
+- git checkout $TRAVIS_BRANCH
+- git add --all
+- git commit -am "Travis commit"
 script:
- - karma start config/karma.config.js --single-run --browsers PhantomJS
- - node server &
- - protractor config/protractor.js
+- karma start config/karma.config.js --single-run --browsers PhantomJS
+- node server &
+- protractor config/protractor.js
 env:
- global:
+  global:
   - NODE_ENV: test
 addons:
- sauce_connect: true
+  sauce_connect: true
 services:
- - mongodb
+- mongodb
+deploy:
+  provider: openshift
+  user: tuliohdvp@gmail.com
+  password:
+    secure: sYT1k6a3X3UW0LLP+E5uriAxyOpbhf192E/Feu2xPC4SiXA2Tor09pOc1kGOS/IAxJE6TH69IgN1bf/yWbmUizAsxPeRlXTLseKd286X9uR1lqrB4RAA/yZaTdeK91ce9+F1AQBvoLgEhTOPbqiH8e4gL1Dlt1XU5bLzMV4quac=
+  app: contatooh
+  domain: contatooh-contatoohtulioh.rhcloud.com
+  on:
+    repo: Tulioh/contatooh
